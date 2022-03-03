@@ -1,0 +1,32 @@
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  
+  &__list-bikes {
+    display: grid;
+    gap: 1rem;
+  }
+  
+  &__card-bike {
+    background-color: color;
+    display: flex;
+    border: solid thin red;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  &__img-bike {
+    width: 100px;
+    height: 100px;
+    border-radius: 1rem;
+  }
+
+  &__title-bike {
+
+  }
+
+  &__description-bike {
+
+  }
+}
