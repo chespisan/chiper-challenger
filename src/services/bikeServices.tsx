@@ -1,4 +1,6 @@
-import Axios, { AxiosResponse } from 'axios';
+import Axios from 'axios';
+import { IGetBikeCountResponse } from '../interfaces/getBikeCountResponse';
+import { IGetBikeResponse } from '../interfaces/getBikeResponse';
 import { IGetBikeStolen } from '../interfaces/getBikeStolen';
 
 
@@ -13,7 +15,7 @@ export class BikesServices {
     this.apiUrl = REACT_APP_URL_BIKES;
   }
 
-  async getBikesStolen({ page, perPage, distance, stolenness }: IGetBikeStolen): Promise<AxiosResponse | undefined> {
+  async getBikesStolen({ page, perPage, distance, stolenness }: IGetBikeStolen): Promise<IGetBikeResponse | undefined> {
     const request = {
       params: {
         page,
@@ -24,6 +26,15 @@ export class BikesServices {
     }
     try {
       const { data } = await Axios.get(`${this.apiUrl}`, request)
+      return data;
+    } catch (error) {
+      console.log('error: ', error);
+    }
+  }
+
+  async getAllBikesCount(): Promise<IGetBikeCountResponse | undefined> {
+    try {
+      const { data } = await Axios.get(`${this.apiUrl}/count`)
       return data;
     } catch (error) {
       console.log('error: ', error);
