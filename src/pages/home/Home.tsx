@@ -53,13 +53,6 @@ export const Home: FC = () => {
     setActivePage(pageNumber);
   }
 
-  const handlFormatDate = () => {
-    var timestamp = 1607110465663
-    var date = new Date(timestamp);
-    // console.log(date.getTime())
-    // console.log(date)    
-  }
-
   const handleSearchAction = (): void => {
     setActivePage(1);
     handleGetBikes({query: inputValue, page: 1, per_page: 10, distance: 10, stolenness: 'stolen'});
@@ -74,7 +67,6 @@ export const Home: FC = () => {
   useEffect(() => {
     handleGetBikes({ page: 1, per_page: 10, distance: 10, stolenness: 'stolen' });
     handleGetBikesCount();
-    handlFormatDate()
   }, []);
 
   return (
