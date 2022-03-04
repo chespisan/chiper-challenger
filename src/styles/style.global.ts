@@ -1,11 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
+import { colorSecondary } from './variables';
 
 
-export const colorPrimary = '#3498db';
-export const colorSecondary = '#f2f2f2';
-export const colorTertiary = '#fff';
-export const colorWaring = '#efc13b';
-export const colorDanger = '#e74c3c';
+
 
 
 export const GlobalStyles = createGlobalStyle `
