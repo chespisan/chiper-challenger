@@ -6,6 +6,9 @@ export interface IBike {
   title: string;
   frame_colors: string[];
   large_img: string;
+  description: string;
+  date_stolen: number;
+  thumb: string;
 }
 
 export interface IGetBikeResponse {

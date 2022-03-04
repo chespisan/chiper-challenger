@@ -1,9 +1,10 @@
 import styled from "styled-components";
+import { borderRadiusSM, colorQuintiary, paddingSM } from "../../styles/variables";
 
 export const InputStyle = styled.input `
-  border: solid thin #dbdbdb;
-  border-radius: 0.5rem;
-  padding: 0.5rem;
+  border: solid thin ${colorQuintiary};
+  border-radius: ${borderRadiusSM};
+  padding: ${paddingSM};
   &:focus {
     outline: none;
   }
