@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-import { colorDanger, colorPrimary, colorSecondary, colorTertiary } from "../../styles/style.global";
+import { colorDanger, colorPrimary, colorSecondary, colorTertiary } from "../../styles/variables";
 
 export const BikeCard = styled.div `
   background-color: ${colorTertiary};

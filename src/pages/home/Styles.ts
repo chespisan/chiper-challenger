@@ -15,6 +15,13 @@ export const HeaderHome = styled.header `
   text-align: center;
 `;
 
+
+export const FilterContainer = styled.div `
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+`;
+
 export const ListBikes = styled.div<IListBikes> `
   display: grid;
   gap: 1rem;
