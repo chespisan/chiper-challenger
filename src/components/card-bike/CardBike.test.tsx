@@ -1,10 +1,9 @@
 /* eslint-disable testing-library/render-result-naming-convention */
-import { render } from "@testing-library/react"
-import { IBike } from "../../interfaces/getBikeResponse"
-import { CardBikeComponent } from "./CardBike"
+import { render } from '@testing-library/react'
+import { IBike } from '../../interfaces/getBikeResponse'
+import { CardBikeComponent } from './CardBike'
 
 describe('Test Card Bike component', () => {
-
   const bikeDefault: IBike = {
     id: 1,
     stolen_location: 'string',
@@ -18,12 +17,12 @@ describe('Test Card Bike component', () => {
 
   const bikeEmptyLargeImg: IBike = {
     ...bikeDefault,
-    large_img: ''
+    large_img: '',
   }
 
   const bikeEmptyAllImg: IBike = {
     ...bikeEmptyLargeImg,
-    thumb: ''
+    thumb: '',
   }
 
   const bikeEmptyData: IBike = {
@@ -31,27 +30,26 @@ describe('Test Card Bike component', () => {
     serial: '',
     stolen_location: '',
     description: '',
-    date_stolen: 0
+    date_stolen: 0,
   }
 
   test('testing render card Bike', () => {
-    const cardBike = render(<CardBikeComponent bike={bikeDefault}/>)
+    const cardBike = render(<CardBikeComponent bike={bikeDefault} />)
     expect(cardBike).not.toBeUndefined()
   })
 
   test('testing render card Bike Empty LargeImg', () => {
-    const cardBike = render(<CardBikeComponent bike={bikeEmptyLargeImg}/>)
+    const cardBike = render(<CardBikeComponent bike={bikeEmptyLargeImg} />)
     expect(cardBike).not.toBeUndefined()
   })
 
   test('testing render card Bike bike Empty All Img', () => {
-    const cardBike = render(<CardBikeComponent bike={bikeEmptyAllImg}/>)
+    const cardBike = render(<CardBikeComponent bike={bikeEmptyAllImg} />)
     expect(cardBike).not.toBeUndefined()
   })
 
   test('testing render card Bike bike Empty All data', () => {
-    const cardBike = render(<CardBikeComponent bike={bikeEmptyData}/>)
+    const cardBike = render(<CardBikeComponent bike={bikeEmptyData} />)
     expect(cardBike).not.toBeUndefined()
   })
-
 })
