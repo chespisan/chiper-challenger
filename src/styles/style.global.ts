@@ -1,4 +1,14 @@
-*{
+import { createGlobalStyle } from 'styled-components';
+import { colorSecondary } from './variables';
+
+
+
+
+
+export const GlobalStyles = createGlobalStyle `
+
+body {
+  background-color: ${colorSecondary};
 	margin: 0;
 	padding: 0;
 	list-style: none;
@@ -11,3 +21,5 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+`;
