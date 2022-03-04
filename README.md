@@ -1,46 +1,61 @@
-# Getting Started with Create React App
+# Test Chiper Front end
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este es un test de Chiper que consta de desarrollar un software que tiene como contexto:
 
-## Available Scripts
+- Las bicicletas robadas son un problema típico en Berlín. La Policía quiere ser más eficiente en la resolución de casos de bicicletas robadas. Decidieron crear un software que pueda automatizar sus procesos: el software que va a desarrollar tiene una serie de items a tener encuenta.
 
-In the project directory, you can run:
+ I want to see a list of reported bike thefts for the Berlin area.
+ I want to see the first 10 bike theft cases, with the ability to - paginate (10 cases per page).
+ I want to see a total number of bike theft cases.
+ For each reported bike theft I want to see:
+ Case title
+ Case description
+ Date of the theft
+ Date of when the case was reported
+ Location of the theft
+ Picture of the bike, if available
+ I want to filter reported bike thefts by partial case title.
+ I want to filter reported bike thefts by date range.
+ I want to see a loading state until the list is available.
+ I want to see an error state if the list is unavailable.
+ I want to see an empty state if there are no results.
+
+
+## Información
+
+Datos tecnicos:
+- React
+- Typescript
+- CSSinJS - styled component (flexbox - grid)
+- Test (coverage > 80%) con jest => react testing library
+- Axios para peticiones a la API
+- CI/CD => Github Actions & Github Page
+- Responsive dispositivos mobiles, tables/ipad/ pc medianos y grandes
+
+El proyecto esta configurado con Github Action y Github page, cada vez que se haga un push o un PR hacia la rama Main, se correra el proceso de Build & Deploy
+la URL es:[https://chespisan.github.io/chiper-challenger/](https://chespisan.github.io/chiper-challenger/)
+
+
+## Versiones Lib
+
+- Node - 16.14.0
+- ReactJS - 17.0.2
+
+## Client
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Correrá el servidor [http://localhost:3000/chiper-challenger](http://localhost:3000/chiper-challenger)
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Construye la aplicación para producción en la carpeta `build`.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `npm run test`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Ejecuta las pruebas unitarias
 
-### `npm run eject`
+### `npm run test:coverage`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Ejecuta todas las pruebas y devuelve un reporte de la cobertura
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
