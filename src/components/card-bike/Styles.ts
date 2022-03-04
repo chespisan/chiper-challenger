@@ -1,25 +1,28 @@
 import styled, { keyframes } from "styled-components";
-import { colorDanger, colorPrimary, colorSecondary, colorTertiary } from "../../styles/variables";
+import { borderRadiusMD, colorDanger, colorPrimary, colorQuintiary, colorSecondary, colorTertiary, fontSizeMD, paddingMD } from "../../styles/variables";
 
 export const BikeCard = styled.div `
+  align-items: center;
   background-color: ${colorTertiary};
-  border: solid thin #e9e9e9;
-  border-radius: 1rem;
+  border: solid thin ${colorQuintiary};
+  border-radius: ${borderRadiusMD};
   display: flex;
   gap: 1rem;
-  padding: 1rem;
+  padding: ${paddingMD};
 `;
 
 export const BikeImgCard = styled.img `
   object-fit: cover;
-  border-radius: 1rem;
-  height: 100px;
-  width: 100px;
+  border-radius: ${borderRadiusMD};
+  height: 150px;
+  width: 150px;
+  @media (min-width: 768px) {
+    width: 200px;
+  }
 `;
 
 export const BikeContentCard = styled.div `
-  /* display: grid;
-  gap: 0.5rem; */
+  display: grid;
 `;
 
 export const BikeTitleCard = styled.h4 `
@@ -46,12 +49,12 @@ export const Spinner = styled.div `
 `;
 
 export const ListEmpty = styled.p `
-  font-size: 18px;
+  font-size: ${fontSizeMD};
   text-align: center;
 `;
 
 export const TextError = styled.p `
   color: ${colorDanger};
-  font-size: 18px;
+  font-size: ${fontSizeMD};
   text-align: center;
 `;

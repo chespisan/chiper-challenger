@@ -1,6 +1,7 @@
 import { FC } from "react"
 
 import { ICardBikeComponent } from "../../interfaces/cardBikeComponent"
+import { formatDate } from "../../utils/formatDate";
 
 import { BikeCard, BikeContentCard, BikeImgCard, BikeTitleCard } from "./Styles"
 
@@ -9,8 +10,8 @@ export const CardBikeComponent: FC<ICardBikeComponent> = ({ bike }: ICardBikeCom
   return (
     <BikeCard>
 
-      {bike.large_img 
-        ?<BikeImgCard src={bike.large_img} alt="" />
+      {bike.large_img || bike.thumb
+        ?<BikeImgCard src={bike.large_img || bike.thumb} alt="" />
         :<BikeImgCard src='https://programacion.net/files/article/20151126051116_image-not-found.png' alt="" />
       }
       
@@ -18,16 +19,16 @@ export const CardBikeComponent: FC<ICardBikeComponent> = ({ bike }: ICardBikeCom
         <BikeTitleCard>{bike.title}</BikeTitleCard>
 
         <p>
-          <strong>serial</strong>: {bike.serial}
+          <strong>Serial</strong>: {bike.serial ? bike.serial : 'N/A'}
         </p>
         <p>
-          < strong>Stolen</strong>: {bike.stolen_location}
+          < strong>Description</strong>: {bike.description ? bike.description : 'N/A'}
         </p>
         <p>
-          <strong>Primary colors</strong>: 35435435
+          <strong>Date Stolen</strong>: {bike.date_stolen ? formatDate(bike.date_stolen): 'N/A'}
         </p>
         <p>
-          <strong>Location</strong>: {bike.stolen_location}
+          <strong>Location</strong>: {bike.stolen_location ? bike.stolen_location : 'N/A'}
         </p>
 
       </BikeContentCard>
