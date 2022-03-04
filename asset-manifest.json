@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/chiper-challenger/static/js/main.5425196f.js",
+    "main.js": "/chiper-challenger/static/js/main.a023551c.js",
     "static/js/787.328a58f4.chunk.js": "/chiper-challenger/static/js/787.328a58f4.chunk.js",
     "index.html": "/chiper-challenger/index.html",
-    "main.5425196f.js.map": "/chiper-challenger/static/js/main.5425196f.js.map",
+    "main.a023551c.js.map": "/chiper-challenger/static/js/main.a023551c.js.map",
     "787.328a58f4.chunk.js.map": "/chiper-challenger/static/js/787.328a58f4.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.5425196f.js"
+    "static/js/main.a023551c.js"
   ]
 }
