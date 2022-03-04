@@ -1,8 +1,8 @@
-import { MouseEventHandler } from "react";
+import { MouseEventHandler } from 'react'
 
 export interface IButton {
-  text: string;
-  click: MouseEventHandler<HTMLButtonElement>;
-  disabled: boolean;
-  dataId?: string;
+  text: string
+  click: MouseEventHandler<HTMLButtonElement>
+  disabled: boolean
+  dataId?: string
 }

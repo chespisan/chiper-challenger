@@ -1,9 +1,7 @@
-import { createGlobalStyle } from 'styled-components';
-import { colorSecondary } from './variables';
+import { createGlobalStyle } from 'styled-components'
+import { colorSecondary } from './variables'
 
-
-
-export const GlobalStyles = createGlobalStyle `
+export const GlobalStyles = createGlobalStyle`
 
 body {
   background-color: ${colorSecondary};
@@ -20,4 +18,4 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-`;
+`
