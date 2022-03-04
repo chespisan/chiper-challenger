@@ -1,17 +1,18 @@
 import styled from "styled-components";
 import { IListBikes } from "../../interfaces/listBike";
+import { fontSizeSM, marginLG, marginMD, marginSM, paddingMD } from "../../styles/variables";
 
 
 export const HomeContainer = styled.div `
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0.5rem;
+  margin: ${marginSM};
 `;
 
 export const HeaderHome = styled.header `
-  font-size: 12px;
-  padding: 1rem;
+  font-size: ${fontSizeSM};
+  padding: ${paddingMD};
   text-align: center;
 `;
 
@@ -19,15 +20,21 @@ export const HeaderHome = styled.header `
 export const FilterContainer = styled.div `
   display: flex;
   gap: 1rem;
-  margin: 2rem 0;
+  margin: ${marginLG} 0;
 `;
 
 export const ListBikes = styled.div<IListBikes> `
   display: grid;
   gap: 1rem;
-  grid-template-columns: ${props => 
-    props.size === 'sm' ? 'repeat(1, 1fr)' : 'repeat(2, 1fr)'
-  };
+  grid-template-columns: repeat(1, 1fr);
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1440px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 `;
 
 export const TotalBikes = styled.div `
