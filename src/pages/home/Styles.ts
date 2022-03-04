@@ -1,10 +1,11 @@
 import styled from "styled-components";
-import { colorTertiary } from "../../styles/style.global";
+import { IListBikes } from "../../interfaces/listBike";
 
 
 export const HomeContainer = styled.div `
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin: 0.5rem;
 `;
 
@@ -14,9 +15,16 @@ export const HeaderHome = styled.header `
   text-align: center;
 `;
 
-export const ListBikes = styled.div `
+export const ListBikes = styled.div<IListBikes> `
   display: grid;
   gap: 1rem;
+  grid-template-columns: ${props => 
+    props.size === 'sm' ? 'repeat(1, 1fr)' : 'repeat(2, 1fr)'
+  };
+`;
+
+export const TotalBikes = styled.div `
+  width: 100%;
 `;
 
 export const TextTotalBikes = styled.p `
