@@ -3,8 +3,6 @@ import { colorSecondary } from './variables';
 
 
 
-
-
 export const GlobalStyles = createGlobalStyle `
 
 body {

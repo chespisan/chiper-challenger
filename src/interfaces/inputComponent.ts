@@ -6,4 +6,5 @@ export interface IInput {
   change: any;
   type: HTMLInputTypeAttribute;
   placeholder?: string;
+  dataId?: string;
 }

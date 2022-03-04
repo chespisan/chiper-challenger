@@ -1,12 +1,11 @@
 import styled from "styled-components";
-import { IListBikes } from "../../interfaces/listBike";
 import { fontSizeSM, marginLG, marginSM, paddingMD } from "../../styles/variables";
 
 
 export const HomeContainer = styled.div `
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   margin: ${marginSM};
 `;
 
@@ -23,7 +22,7 @@ export const FilterContainer = styled.div `
   margin: ${marginLG} 0;
 `;
 
-export const ListBikes = styled.div<IListBikes> `
+export const ListBikes = styled.div `
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(1, 1fr);
@@ -37,9 +36,7 @@ export const ListBikes = styled.div<IListBikes> `
   }
 `;
 
-export const TotalBikes = styled.div `
-  width: 100%;
-`;
+export const TotalBikes = styled.div ` width: 100%; `;
 
 export const TextTotalBikes = styled.p `
   margin: 0.2rem;

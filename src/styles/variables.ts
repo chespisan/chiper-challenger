@@ -1,5 +1,5 @@
-// COLORS //
 
+// COLORS //
 export const colorPrimary   = '#3498db';
 export const colorSecondary = '#f2f2f2';
 export const colorTertiary  = '#fff';
