@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { IListBikes } from "../../interfaces/listBike";
-import { fontSizeSM, marginLG, marginMD, marginSM, paddingMD } from "../../styles/variables";
+import { fontSizeSM, marginLG, marginSM, paddingMD } from "../../styles/variables";
 
 
 export const HomeContainer = styled.div `

@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FC, HTMLInputTypeAttribute, useRef } from "react";
+import { FC, useRef } from "react";
 import { IInput } from "../../interfaces/inputComponent";
 import { InputStyle } from "./Styles"
 

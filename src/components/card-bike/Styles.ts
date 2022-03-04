@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-import { borderRadiusMD, colorDanger, colorPrimary, colorQuintiary, colorSecondary, colorTertiary, fontSizeMD, paddingMD } from "../../styles/variables";
+import { borderRadiusMD, colorDanger, colorPrimary, colorQuintiary, colorTertiary, fontSizeMD, paddingMD } from "../../styles/variables";
 
 export const BikeCard = styled.div `
   align-items: center;
