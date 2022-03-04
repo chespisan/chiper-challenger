@@ -1,6 +1,7 @@
 export interface IGetBikeStolen {
-    page: number;
-    perPage: number;
-    distance: number;
-    stolenness: string;
-  }
+  page?: number;
+  per_page?: number;
+  distance?: number;
+  stolenness?: string;
+  query?: string;
+}

@@ -15,13 +15,10 @@ export class BikesServices {
     this.apiUrl = REACT_APP_URL_BIKES;
   }
 
-  async getBikesStolen({ page, perPage, distance, stolenness }: IGetBikeStolen): Promise<IGetBikeResponse> {
+  async getBikesStolen(paramsData: IGetBikeStolen): Promise<IGetBikeResponse> {
     const request = {
       params: {
-        page,
-        per_page: perPage,
-        distance,
-        stolenness
+        ...paramsData
       }
     }
     const { data } = await Axios.get(`${this.apiUrl}`, request)
