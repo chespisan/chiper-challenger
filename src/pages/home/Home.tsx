@@ -1,14 +1,16 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { FC, useEffect, useState } from "react";
+import { FC, useCallback, useEffect, useState } from "react";
 import Pagination from "react-js-pagination";
-import { ButtonComponent } from "../../components/button/Button";
+import debounce from 'lodash.debounce';
 
+import { ButtonComponent } from "../../components/button/Button";
 import { CardBikeComponent } from "../../components/card-bike/CardBike";
 import { ListEmpty, Spinner, TextError } from "../../components/card-bike/Styles";
 import { InputComponent } from "../../components/input/Input";
 
 import { IBike } from "../../interfaces/getBikeResponse";
 import { IGetBikeStolen } from "../../interfaces/getBikeStolen";
+
 import { BikesServices } from "../../services/bikeServices"
 
 import { FilterContainer, HeaderHome, HomeContainer, ListBikes, TextTotalBikes, TotalBikes } from "./Styles";
@@ -64,13 +66,23 @@ export const Home: FC = () => {
     handleGetBikes({ page: 1, per_page: 10, distance: 10, stolenness: 'stolen' });
   }
 
+  const debounceSave = useCallback(
+    debounce(() => handleSearchAction(), 1000),
+    []
+  );
+
+  const handleValueInput = (valueInput: string) => {
+    setInputValue(valueInput);
+    debounceSave();
+  }
+
   useEffect(() => {
     handleGetBikes({ page: 1, per_page: 10, distance: 10, stolenness: 'stolen' });
     handleGetBikesCount();
   }, []);
 
   return (
-    <HomeContainer>
+    <HomeContainer data-testid='home'>
 
       <HeaderHome >
         <h2>Police Departament of Berlin</h2>
@@ -78,18 +90,15 @@ export const Home: FC = () => {
 
       <FilterContainer>
         <InputComponent 
+          dataId='input-search'
           name='search'
           type='text'
           value={inputValue}
-          change={setInputValue}
+          change={handleValueInput}
           placeholder='Buscar....'
         />
         <ButtonComponent 
-          text='buscar' 
-          click={handleSearchAction}
-          disabled={inputValue ? false : true}
-        />
-        <ButtonComponent 
+          dataId='action-clean-filter'
           text='Clean' 
           click={handleCleanFilters}
           disabled={false}
@@ -103,7 +112,7 @@ export const Home: FC = () => {
           ? <TextError>
             Ups, ha ocurrido un error.
             <br />
-            Intenta de nuevo.
+            Intente de nuevo.
           </TextError>
           :
           listBikes.length < 1
@@ -115,13 +124,14 @@ export const Home: FC = () => {
                 <TextTotalBikes>Total: {bikesCount}</TextTotalBikes>
               </TotalBikes>
 
-              <ListBikes size="sm">
+              <ListBikes>
                 {listBikes?.map((bike: IBike) => (
                   <CardBikeComponent key={bike.id} bike={bike} />
                 ))}
               </ListBikes>
 
               <Pagination
+                data-testid='paginator'
                 activePage={activePage}
                 itemsCountPerPage={10}
                 totalItemsCount={bikesCount}
